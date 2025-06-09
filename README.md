@@ -33,7 +33,6 @@ bash <(curl -s https://raw.githubusercontent.com/Mirzakochak/xui-status-panel/ma
 
 ![Preview](https://raw.githubusercontent.com/Mirzakochak/xui-status-panel/main/preview.png)
 
-> اگر تصویر پیش‌نمایش ندارید، می‌تونید از پنل اسکرین‌شات بگیرید و با نام `preview.png` داخل مخزن آپلود کنید.
 
 ---
 
