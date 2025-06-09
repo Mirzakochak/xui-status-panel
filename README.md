@@ -31,7 +31,7 @@ bash <(curl -s https://raw.githubusercontent.com/Mirzakochak/xui-status-panel/ma
 
 ## 🖼️ پیش‌نمایش:
 
-![Preview](https://raw.githubusercontent.com/Mirzakochak/xui-status-panel/main/preview.png)
+![Preview](https://ibb.co/XrZ2D5Xn)
 
 > اگر تصویر پیش‌نمایش ندارید، می‌تونید از پنل اسکرین‌شات بگیرید و با نام `preview.png` داخل مخزن آپلود کنید.
 
