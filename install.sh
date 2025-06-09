@@ -1,45 +1,43 @@
-#!/bin/bash
-
 clear
 echo "=============================="
 echo " X-UI Subscription Panel"
 echo "=============================="
-echo "1) نصب پنل"
-echo "2) حذف کامل"
-echo "3) خروج"
+echo "1) Install Panel"
+echo "2) Uninstall Panel"
+echo "3) Exit"
 echo "=============================="
-echo -n "گزینه را وارد کنید: "
+echo -n "Choose an option: "
 read choice
 
 case $choice in
     1)
-        echo -e "\n🚀 نصب در حال انجام است..."
+        echo -e "\n🚀 Installing..."
         apt update -y && apt upgrade -y
         apt install php php-sqlite3 php-pdo apache2 curl -y
 
         systemctl enable apache2
         systemctl restart apache2
 
-        echo "📥 دریافت اسکریپت..."
-        curl -o /var/www/html/status.php https://raw.githubusercontent.com/MrAliDev/xui-subscription-panel/main/status.php
+        echo "📥 Downloading script..."
+        curl -o /var/www/html/status.php https://raw.githubusercontent.com/Mirzakochak/xui-status-panel/main/status.php
 
         chown www-data:www-data /var/www/html/status.php
         chmod 644 /var/www/html/status.php
 
         IP=$(curl -s ifconfig.me)
-        echo -e "\n✅ نصب کامل شد!"
-        echo -e "🌐 آدرس دسترسی: http://$IP/status.php"
+        echo -e "\n✅ Installation completed!"
+        echo -e "🌐 Access your panel: http://$IP/status.php"
         ;;
     2)
-        echo "🧹 در حال حذف پنل..."
+        echo "🧹 Uninstalling..."
         rm -f /var/www/html/status.php
-        echo "✅ پنل حذف شد."
+        echo "✅ Panel removed."
         ;;
     3)
-        echo "❌ خروج از برنامه."
+        echo "❌ Exiting."
         exit 0
         ;;
     *)
-        echo "⛔ گزینه نامعتبر بود!"
+        echo "⛔ Invalid option!"
         ;;
 esac
